@@ -1,0 +1,64 @@
+Q.8 Difference between absolute and relative and sticky and fixed position explain with example.
+
+Answer:-
+
+The positioning properties in CSS, such as absolute, relative, sticky, and fixed, allow you to control the placement and behavior of elements on a web page. Here's a breakdown of the differences between these positioning properties with examples:
+
+Absolute Position:
+When an element is positioned absolute, it is positioned relative to its nearest positioned ancestor (an ancestor with a position other than static).
+If there are no positioned ancestors, the element is positioned relative to the initial containing block (the viewport).
+Absolute positioned elements are removed from the normal flow of the document, meaning they don't affect the positioning of other elements.
+You can use properties like top, bottom, left, and right to specify the exact position of the element.
+Example:
+css
+Copy code
+.parent {
+  position: relative;
+}
+
+.absolute-child {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+Relative Position:
+When an element is positioned relative, it is positioned relative to its normal position in the document flow.
+The element retains its position in the document flow, but you can use properties like top, bottom, left, and right to shift its position from the normal flow.
+Relative positioning doesn't affect the positioning of other elements.
+Example:
+css
+Copy code
+.relative-element {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+Sticky Position:
+Sticky positioning is a hybrid of relative and fixed positioning.
+When an element is positioned sticky, it is initially positioned according to the normal flow of the document.
+However, as the user scrolls, the element becomes "stuck" at a specified position within its containing element.
+Sticky positioning is based on the scroll position of the user, and it remains in the normal flow of the document until it reaches the specified position.
+Example:
+css
+Copy code
+.sticky-element {
+  position: sticky;
+  top: 50px;
+}
+Fixed Position:
+When an element is positioned fixed, it is positioned relative to the viewport, and it remains fixed in its position even when the page is scrolled.
+Fixed positioned elements are removed from the normal document flow, and they do not affect the positioning of other elements.
+You can use properties like top, bottom, left, and right to specify the exact position of the element.
+Example:
+css
+Copy code
+.fixed-element {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+In summary, the differences can be summarized as follows:
+
+Absolute and Relative positioning are both relative to some other element, but Absolute is positioned relative to the nearest positioned ancestor, while Relative is positioned relative to its normal position in the document flow.
+Sticky positioning is similar to Relative, but it becomes fixed at a specified position as the user scrolls.
+Fixed positioning is relative to the viewport and remains fixed even when the page is scrolled.

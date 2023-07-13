@@ -1,0 +1,34 @@
+Q.5 How is Border-box different from Content Box?
+ Answer:- 
+ In CSS, the
+box-sizing property allows you to control how the total width and height of an
+element are calculated, including the content, padding, and border. There are
+two main values for the box-sizing property: content-box and border-box.
+Content-box (default): When an element has box-sizing: content-box, the width
+and height values specified for the element only include the content area. The
+padding and border are added to the specified width and height values, resulting
+in the total size of the element being larger than the specified dimensions. In
+other words, the width and height properties define only the size of the content
+area, and the padding and border are added to that size. For example, if you set
+an element's width to 200 pixels and add 10 pixels of padding and a 2-pixel
+border, the total width of the element will be 224 pixels (200 pixels for
+content + 10 pixels for padding on the left + 10 pixels for padding on the right
++ 2 pixels for the left border + 2 pixels for the right border). Border-box:
+When an element has box-sizing: border-box, the specified width and height
+values include the content area, padding, and border. In other words, the width
+and height properties define the total size of the element, including the
+content, padding, and border. The padding and border values are subtracted from
+the specified width and height, ensuring that the content area remains the size
+you've specified. Using the same example as before, if you set an element's
+width to 200 pixels and add 10 pixels of padding and a 2-pixel border, the total
+width of the element will be exactly 200 pixels. The width includes the content,
+padding, and border, and the browser automatically adjusts the content area size
+to fit within the specified width. The key difference between content-box and
+border-box is how the width and height properties are interpreted and how the
+padding and border affect the size of the element. With content-box, the width
+and height are exclusive of padding and border, whereas with border-box, the
+width and height include the padding and border. border-box is particularly
+useful for layout purposes as it simplifies the calculation of element sizes and
+helps maintain consistent dimensions, especially when working with complex
+layouts and nested elements. It allows you to more easily control the overall
+size of an element, including its content, padding, and border.

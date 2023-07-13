@@ -1,0 +1,32 @@
+Q.6 What’s z-index and How does it Function ? 
+Answer:-
+ The z-index property in
+CSS controls the stacking order of positioned elements on a web page along the
+z-axis. The z-axis is a conceptual axis that represents the depth or elevation
+of elements on the page. The z-index property assigns a numerical value to an
+element, determining its position relative to other elements in the stacking
+order. The higher the z-index value, the closer the element is to the viewer,
+appearing in front of elements with lower z-index values. If two elements have
+the same z-index, their stacking order is determined by their position in the
+HTML structure (the element that comes later in the HTML will be displayed on
+top). Here's how z-index functions: Stacking Context: Each positioned element
+with a z-index value other than auto (the default value) creates a stacking
+context. A stacking context is a hierarchical structure that determines the
+order in which elements are displayed. Elements within the same stacking context
+are stacked relative to each other, and the stacking contexts can overlap or
+nest. Element Hierarchy: Elements within the same stacking context are stacked
+based on their z-index values. An element with a higher z-index value will be
+displayed in front of elements with lower z-index values within the same
+stacking context. If elements have the same z-index, their order is determined
+by the order of appearance in the HTML structure. Stacking Order: The stacking
+order starts from the lowest positioned element in the HTML structure and
+proceeds to higher positioned elements within the same stacking context.
+Elements outside any stacking context (or without a z-index value) are stacked
+below elements with stacking contexts. It's important to note that the z-index
+property works only on positioned elements, such as those with position:
+relative, position: absolute, or position: fixed. Non-positioned elements
+(elements with the default position: static) are unaffected by z-index. By
+adjusting the z-index values of elements, you can control their visual layering
+and determine which elements appear in front of or behind others. This property
+is commonly used for creating overlays, dropdown menus, tooltips, and managing
+the stacking order of elements in complex layouts.
