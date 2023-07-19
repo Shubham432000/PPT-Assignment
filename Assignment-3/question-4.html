@@ -1,0 +1,42 @@
+Q.4 What is the purpose of using Media Queries for Print Media?
+
+Answer:-
+
+The purpose of using Media Queries for print media in CSS is to create a separate and optimized layout specifically designed for printing documents from a web page. Media Queries allow you to apply different styles when the content is printed, ensuring that the printed output is well-formatted, easy to read, and doesn't waste unnecessary resources like colors or backgrounds that may not be suitable for print.
+
+By using Media Queries for print media, you can:
+
+Control Page Layout: You can adjust the layout and formatting of the content to make it more suitable for printing on paper. This includes setting margins, page size, headers, footers, and page breaks.
+
+Remove Non-Essential Elements: You can hide or remove non-essential elements that are not relevant for the printed version. For example, you may want to exclude navigation menus, sidebars, or images that are not essential for the printed document.
+
+Optimize Font Sizes: You can adjust font sizes to ensure that the printed text is easily readable. Larger font sizes may be more appropriate for printed documents compared to screen-based designs.
+
+Customize Styling: You can customize colors, backgrounds, and other styling elements to suit the printing medium. For example, you may want to use black and white colors to save ink or choose a printer-friendly color scheme.
+
+Here's an example of using a Media Query for print media in CSS:
+
+/* Default styles for screen media */
+.some-class {
+  /* Some styles here */
+}
+
+/* Media Query for print media */
+@media print {
+  .some-class {
+    /* CSS rules to apply for printing */
+    font-size: 14px;
+    margin: 10mm;
+    color: black;
+    background: none;
+    /* Other print-specific styles */
+  }
+}
+
+In this example, the .some-class element has different styles for screen media (the default) and for print media. When the content is printed, the styles inside the @media print block will be applied.
+
+By using Media Queries for print media, you can create a print-friendly version of your web page, ensuring that users get a well-formatted and optimized document when they print from your website.
+
+
+
+

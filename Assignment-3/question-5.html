@@ -1,0 +1,41 @@
+Q.5 What is the purpose of the orientation media feature?
+
+Answer:-
+
+
+The orientation media feature in CSS is used to target the orientation of the output device, such as a screen or printed document. It allows you to apply different styles based on whether the device's orientation is portrait or landscape.
+
+The purpose of the orientation media feature is to create responsive designs that adapt to the way users are viewing the content. By using this feature, you can adjust the layout and presentation of the content to provide an optimal viewing experience based on the device's orientation.
+
+The orientation media feature has two possible values:
+
+portrait: This value indicates that the device's height is greater than its width. In other words, the device is in a portrait orientation, like a smartphone or a vertically oriented tablet.
+
+landscape: This value indicates that the device's width is greater than its height. The device is in a landscape orientation, like a widescreen monitor or a horizontally oriented tablet.
+
+Here's an example of how the orientation media feature can be used in CSS:
+
+
+Copy code
+/* Styles for portrait orientation */
+@media (orientation: portrait) {
+  /* CSS rules to apply for portrait orientation */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Styles for landscape orientation */
+@media (orientation: landscape) {
+  /* CSS rules to apply for landscape orientation */
+  body {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+In this example, the CSS applies different font sizes and line heights based on the device's orientation. When the device is in portrait orientation, the font size will be 16 pixels with a line height of 1.6. When the device is in landscape orientation, the font size will be 18 pixels with a line height of 1.8.
+
+By using the orientation media feature, you can create responsive designs that adapt to both portrait and landscape orientations, providing a better user experience for users regardless of how they are viewing the content.
+
+

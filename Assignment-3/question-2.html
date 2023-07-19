@@ -1,0 +1,36 @@
+Q.2 How do you define a media query in CSS?
+
+Answer:-
+
+In CSS, you define a Media Query using the @media rule. The @media rule allows you to apply specific CSS styles or rules based on various conditions, such as the device's screen size, resolution, orientation, and other device-specific properties. This enables you to create responsive web designs that adapt and look good on different devices.
+
+The basic syntax of a Media Query is as follows:
+
+@media mediaType and (mediaFeature) {
+    /* CSS rules to apply for the specified media type and feature */
+  }
+
+  Here's a breakdown of the components:
+
+@media: This is the at-rule that starts the Media Query block.
+mediaType: This is an optional parameter that specifies the type of media the query applies to. It can be values like screen, print, speech, etc. If not specified, the Media Query will apply to all media types.
+mediaFeature: This is the condition or criteria based on which the CSS rules will be applied. It includes properties like width, height, orientation, resolution, and more. You can also use logical operators such as and, or, and not to combine multiple media features.
+Here's an example of how you can use a Media Query to apply different styles for screens with a width less than 768 pixels (typical for mobile devices):
+
+/* CSS rules for all screen sizes */
+.some-class {
+  /* Some styles here */
+}
+
+/* Media Query for screens with a width less than 768 pixels */
+@media screen and (max-width: 767px) {
+  .some-class {
+    /* CSS rules to apply for smaller screens */
+  }
+}
+
+In this example, the styles defined inside the Media Query will only apply when the screen width is less than 768 pixels. The styles outside the Media Query will apply to all screen sizes. By using Media Queries, you can create responsive web designs that adjust based on the user's device, providing a better user experience across different platforms and screen sizes.
+
+
+
+

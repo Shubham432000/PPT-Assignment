@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .nav1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 45%;
+      }
+      .navname {
+        font-weight: 300;
+        font-size: 20px;
+      }
+      .button {
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid blue;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        font-size: 17px;
+      }
+      .section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+      }
+      .head1 {
+        margin-left: 150px;
+        font-size: 30px;
+      }
+      .head2 {
+        margin-left: 150px;
+        font-size: 50px;
+        color: blue;
+      }
+      .head3 {
+        margin-left: 150px;
+        color: blue;
+      }
+      .head4 {
+        margin-left: 150px;
+        font-weight: 300;
+        font-size: 21px;
+      }
+      .section1 {
+        width: 50%;
+        margin-top: 100px;
+      }
+      .img1{
+        width: 50%; height: auto; margin-left: 150px
+      }
+      .img2{
+        margin-left: 150px; width: 30%; height: auto
+      }
+      @media screen and (max-width: 500px) {
+        .section{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .section1{
+          width: 100%;
+        }
+        .section2{
+          width: 100%;
+        }
+        .head1 {
+        width: 100%;
+        font-size: 30px;
+        margin-left: 0px;
+      }
+      .head2 {
+        width: 100%;
+       
+        margin-left: 0px;
+      }
+      .head3{
+        width: 100%;
+        
+        margin-left: 0px;
+      }
+      .head4{
+        width: 100%;
+        
+        margin-left: 0px;
+      }
+      .img1{
+        width: 50%; margin-left: 0px
+      }
+      .img2{
+        margin-left: 0px; width: 50%; 
+      }
+      .navname{
+        display: none;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div class="wrapper">
+          <div>
+            <img
+              src="https://www.getonecard.app/images/logo_black.svg"
+              alt=""
+              style="width: 80%; height: auto"
+            />
+          </div>
+          <div class="nav1">
+            <h1 class="navname" >
+              Home
+            </h1>
+            <h1 class="navname">About Us</h1>
+            <h1 class="navname">Carrers</h1>
+            <h1 class="navname">Offers</h1>
+            <h1 class="navname">Blog</h1>
+            <h1 class="navname">FAQ</h1>
+            <h1 class="navname">Contact Us</h1>
+            <button class="button">Apply Now</button>
+          </div>
+        </div>
+      </nav>
+      <section>
+        <div class="section">
+          <div class="section1">
+            <h1 class="head1">Say Hi to</h1>
+            <h1 class="head2">oneCard</h1>
+            <h1 class="head3">Co-branded Card Issuers :</h1>
+            <img class="img1"
+              
+              src="https://www.getonecard.app/images/legal/Banking_partners_24thJan_dark__.png"
+              alt=""
+            />
+            <h4 class="head4">
+              India's best metal credit card. Built with full-stack tech. Backed
+              by the principles of simplicity, transparency, and giving back
+              control to the user.
+            </h4>
+            <img class="img2"
+              
+              src="https://www.getonecard.app/images/icons/cta_apply_now.svg"
+              alt=""
+            />
+          </div>
+          <div class="section2" style="width: 50%">
+            <video
+              src="https://www.getonecard.app/images/say_hi_2x_d3_.mp4"
+              autoplay="autoplay"
+              style="width: 100%; height: auto"
+            ></video>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
