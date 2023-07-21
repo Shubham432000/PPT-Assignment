@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: black;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        table-layout: fixed; /* Set equal width for all columns */
+      }
+
+      th,
+      td,
+      tr {
+        color: white;
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+        width: 25%; /* Equal width for each column (since there are 4 columns) */
+      }
+
+      @media screen and (max-width: 500px) {
+        body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background-color: black;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        table-layout: fixed; /* Set equal width for all columns */
+      }
+
+      th,
+      td,
+      tr {
+        color: white;
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+        width: 15%; /* Equal width for each column (since there are 4 columns) */
+      }
+
+      .non{
+        display: none;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <table id="student-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th class="non">Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rahul sharma</td>
+          <td>rahul.sharma@gmail.com</td>
+          <td class="non">9876325410</td>
+        </tr>
+        <tr>
+          <td>priya patel</td>
+          <td>priya.patel@gmail.com</td>
+          <td class="non">8765431032</td>
+        </tr>
+        <tr>
+          <td>amit singh</td>
+          <td>amit.singh@gmail.com</td>
+          <td class="non">9876325410</td>
+        </tr>
+        <tr>
+          <td>sneha verma</td>
+          <td>sneha.verma@gmail.com</td>
+          <td class="non">8765431032</td>
+        </tr>
+        <tr>
+          <td>mohit gupta</td>
+          <td>mohit.gupta@gmail.com</td>
+          <td class="non">9876325410</td>
+        </tr>
+        <tr>
+          <td>neha agarwal</td>
+          <td>neha.agarwal@gmail.com</td>
+          <td class="non">8765431032</td>
+        </tr>
+        <tr>
+          <td>rajesh kumar</td>
+          <td>rajesh.kumar@gmail.com</td>
+          <td class="non">9876325410</td>
+        </tr>
+        <tr>
+          <td>anita desai</td>
+          <td>anita.desai@gmail.com</td>
+          <td class="non">8765431032</td>
+        </tr>
+        <tr>
+          <td>varun malhotra</td>
+          <td>varun.malhotra@gmail.com</td>
+          <td class="non">9876325410</td>
+        </tr>
+        <tr>
+          <td>pooja mehta</td>
+          <td>pooja.mehta@gmail.com</td>
+          <td class="non">8765431032</td>
+        </tr>
+        <!-- Add more student rows as needed -->
+      </tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
