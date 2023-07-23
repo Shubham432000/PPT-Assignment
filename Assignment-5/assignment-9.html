@@ -1,0 +1,46 @@
+Q.9 Explain fetch
+
+answer:-
+
+fetch is a built-in JavaScript method that provides an easy way to make network requests and fetch resources (data, files, etc.) from a server or an API endpoint. It is part of the Web API specification and is available in modern browsers and Node.js environments.
+
+The fetch function returns a Promise that resolves to the Response object representing the response to the request. This allows you to handle the response data and handle potential errors using then() and catch() methods or, even better, with async/await.
+
+Basic syntax of fetch:
+
+
+
+fetch(url)
+  .then(response => {
+    // Handle the response
+  })
+  .catch(error => {
+    // Handle errors
+  });
+Where:
+
+url: The URL from which to fetch the data.
+Example of using fetch to get JSON data from an API:
+
+
+
+const apiUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json(); // Convert response data to JSON
+  })
+  .then(data => {
+    console.log(data); // Output the fetched JSON data
+  })
+  .catch(error => {
+    console.error('Fetch error:', error.message);
+  });
+In this example, fetch is used to make a GET request to the given URL. The response is checked for success using response.ok, and if the response is okay, the data is extracted using response.json(), which returns a Promise that resolves to the JSON data. The fetched JSON data is then logged to the console.
+
+fetch is highly versatile and can be used to make various types of requests, including GET, POST, PUT, DELETE, etc. By default, fetch makes GET requests, but you can use additional options in the second parameter to customize the request method, headers, body, and other settings.
+
+Note: Unlike some external libraries or older approaches (e.g., XMLHttpRequest), fetch does not automatically consider non-2xx status codes as errors. It treats network errors like a failed connection as rejections, but for responses with non-2xx status codes, you need to explicitly check response.ok or throw an error to handle them properly.

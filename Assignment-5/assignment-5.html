@@ -1,0 +1,67 @@
+Q.5 What are Callbacks &  Callback Hell ?
+
+answer:-
+
+Callbacks are functions passed as arguments to other functions and are intended to be executed later, often after the completion of an asynchronous operation. They are a fundamental concept in JavaScript, especially when dealing with asynchronous code, as they allow you to handle the results of asynchronous tasks once they are completed.
+
+In JavaScript, callbacks are commonly used to handle asynchronous tasks such as making API calls, reading files, or performing database queries. By passing a callback function to an asynchronous function, you can define what should happen when the asynchronous operation finishes.
+
+Example of using a callback:
+
+
+
+
+function fetchDataFromServer(callback) {
+  // Simulating an API call delay using setTimeout
+  setTimeout(() => {
+    const data = { id: 1, name: 'John Doe' };
+    callback(data);
+  }, 1000);
+}
+
+function handleData(data) {
+  console.log('Received data:', data);
+}
+
+fetchDataFromServer(handleData);
+In this example, fetchDataFromServer simulates an API call with a 1-second delay. The handleData function is passed as a callback, so when the data is retrieved, it is passed to handleData and processed accordingly.
+
+Callback Hell:
+Callback Hell, also known as the Pyramid of Doom, is a situation that arises when dealing with multiple nested callbacks, especially in scenarios where multiple asynchronous operations need to be executed sequentially or dependent on each other. It can result in code that is difficult to read, understand, and maintain, as the indentation levels increase, leading to what looks like a pyramid of nested callbacks.
+
+Example of Callback Hell:
+
+
+
+
+function stepOne(callback) {
+  setTimeout(() => {
+    console.log('Step One Complete');
+    callback();
+  }, 1000);
+}
+
+function stepTwo(callback) {
+  setTimeout(() => {
+    console.log('Step Two Complete');
+    callback();
+  }, 1000);
+}
+
+function stepThree(callback) {
+  setTimeout(() => {
+    console.log('Step Three Complete');
+    callback();
+  }, 1000);
+}
+
+stepOne(() => {
+  stepTwo(() => {
+    stepThree(() => {
+      console.log('All steps completed!');
+    });
+  });
+});
+In this example, each step is asynchronous, and the next step depends on the completion of the previous one. This leads to a deep nesting of callbacks, which can quickly become confusing and difficult to manage, especially when the number of steps increases.
+
+To mitigate Callback Hell, several techniques have been introduced over time, such as using Promises or the more recent Async/Await syntax, which provide cleaner and more structured ways of handling asynchronous code. Promises and Async/Await help to avoid excessive nesting and make the code more readable and maintainable.

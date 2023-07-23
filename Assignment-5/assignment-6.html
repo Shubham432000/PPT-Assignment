@@ -1,0 +1,86 @@
+Q.6 What are Promises & Explain Some Three Methods of Promise
+
+answer:-
+
+Promises are a way to handle asynchronous operations in JavaScript in a more organized and structured manner. They represent a value that may not be available yet but will be resolved (fulfilled) or rejected with a reason (error) at some point in the future. Promises provide a standardized way to work with asynchronous code and avoid the pitfalls of Callback Hell.
+
+A Promise can be in one of three states:
+
+Pending: The initial state of a Promise before it is fulfilled or rejected.
+
+Fulfilled (Resolved): The state of a Promise when the operation is completed successfully, and the promise's associated value is available.
+
+Rejected: The state of a Promise when the operation encounters an error or fails, and a reason for the failure is provided.
+
+The three methods of Promise are:
+
+then():
+The then() method is used to handle the fulfillment of a Promise. It takes two optional callback functions as arguments: the first one is called when the Promise is fulfilled (resolved), and the second one is called when the Promise is rejected.
+Syntax:
+
+
+
+promise.then(onFulfilled, onRejected);
+Example:
+
+
+
+const myPromise = new Promise((resolve, reject) => {
+  // Simulating an asynchronous operation
+  setTimeout(() => {
+    const data = { id: 1, name: 'John Doe' };
+    // Resolving the Promise with the data
+    resolve(data);
+    // Or, to simulate an error:
+    // reject(new Error('Failed to fetch data.'));
+  }, 1000);
+});
+
+// Handling the fulfillment and rejection of the Promise
+myPromise
+  .then(data => {
+    console.log('Received data:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  });
+catch():
+The catch() method is used to handle the rejection of a Promise. It is called when the Promise is rejected, either explicitly through the reject() method or when an error occurs during the Promise execution.
+Syntax:
+
+
+
+promise.catch(onRejected);
+Example (Continuing from the previous example):
+
+
+
+myPromise
+  .then(data => {
+    console.log('Received data:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  });
+finally():
+The finally() method is used to specify a callback that will be executed when the Promise is settled, whether it is fulfilled or rejected. This method allows you to perform cleanup tasks that should be done regardless of the Promise's outcome.
+Syntax:
+
+
+
+promise.finally(onFinally);
+Example:
+
+
+
+myPromise
+  .then(data => {
+    console.log('Received data:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  })
+  .finally(() => {
+    console.log('Promise settled, cleanup code here.');
+  });
+In summary, Promises provide a more structured and readable way to handle asynchronous operations in JavaScript. The then(), catch(), and finally() methods are essential for defining the behavior to be executed when the Promise is fulfilled, rejected, or settled. Using Promises makes it easier to reason about and manage asynchronous code and avoids the pitfalls of Callback Hell.

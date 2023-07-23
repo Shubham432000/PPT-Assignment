@@ -1,0 +1,15 @@
+Q.1 What’s difference between Synchronous and Asynchronous?
+
+answer:-
+
+Synchronous and asynchronous are two different communication and processing methods used in various contexts, such as programming, data transmission, and networking. The main difference between them lies in how they handle the flow of data and execution:
+
+Synchronous:
+In synchronous operations, tasks are executed one after the other, in a sequential and blocking manner. When a synchronous task is initiated, the program or system waits for that task to complete before moving on to the next one. This means that each task must finish before the next task can start. Synchronous operations are straightforward and easier to reason about, but they can lead to potential delays if a task takes a long time to complete, as it may block the execution of subsequent tasks.
+Example: Imagine a function that makes an API call and waits for the response before continuing with the rest of the code. The program will be stuck at this API call until it gets the response, which could take some time.
+
+Asynchronous:
+In asynchronous operations, tasks are executed independently of each other. When an asynchronous task is initiated, the program doesn't wait for it to finish before moving on to the next task. Instead, it continues executing other tasks or code segments while waiting for the asynchronous task to complete. As a result, asynchronous operations can improve efficiency and responsiveness in applications that involve waiting for external events or time-consuming tasks.
+Example: In web development, asynchronous programming is commonly used when making AJAX requests. When a request is sent to the server, the browser can continue interacting with the user interface without waiting for the response. Once the response is received, a callback function can be triggered to handle the data accordingly.
+
+In summary, synchronous operations follow a strict one-after-the-other approach, while asynchronous operations allow tasks to run concurrently, making it possible to handle multiple tasks without waiting for each one to finish before starting the next. Asynchronous programming is particularly useful in scenarios where responsiveness and performance are essential, such as in web applications or systems with multiple I/O operations.

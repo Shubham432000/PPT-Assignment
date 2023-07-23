@@ -1,0 +1,87 @@
+Q.4 how can you handle Async code in JavaScript ?
+
+answer:-
+
+Handling asynchronous code in JavaScript is crucial for building responsive and efficient applications that deal with time-consuming operations such as API calls, file reading, or database queries. JavaScript provides several mechanisms to handle asynchronous operations effectively:
+
+Callbacks:
+Callbacks are one of the oldest ways to handle asynchronous code in JavaScript. A callback is a function that is passed as an argument to another function and gets executed once the asynchronous operation is complete.
+Example:
+
+
+
+function fetchDataFromServer(callback) {
+  // Simulating an API call delay using setTimeout
+  setTimeout(() => {
+    const data = { id: 1, name: 'John Doe' };
+    callback(data);
+  }, 1000);
+}
+
+function handleData(data) {
+  console.log('Received data:', data);
+}
+
+fetchDataFromServer(handleData);
+Promises:
+Promises were introduced in ECMAScript 6 (ES6) and provide a more structured and elegant way to handle asynchronous code. A Promise represents a future value or error that will be available at some point in time. It can be in one of three states: "pending," "fulfilled" (resolved), or "rejected."
+Example:
+
+
+
+function fetchDataFromServer() {
+  return new Promise((resolve, reject) => {
+    // Simulating an API call delay using setTimeout
+    setTimeout(() => {
+      const data = { id: 1, name: 'John Doe' };
+      resolve(data);
+      // Or, to simulate an error:
+      // reject(new Error('Failed to fetch data.'));
+    }, 1000);
+  });
+}
+
+fetchDataFromServer()
+  .then(data => {
+    console.log('Received data:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error.message);
+  });
+Async/Await:
+Async/Await is a syntax introduced in ES8 (ES2017) that builds upon Promises and makes asynchronous code look more like synchronous code, which can be easier to read and maintain.
+Example:
+
+
+
+function fetchDataFromServer() {
+  return new Promise((resolve, reject) => {
+    // Simulating an API call delay using setTimeout
+    setTimeout(() => {
+      const data = { id: 1, name: 'John Doe' };
+      resolve(data);
+    }, 1000);
+  });
+}
+
+async function getData() {
+  try {
+    const data = await fetchDataFromServer();
+    console.log('Received data:', data);
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+getData();
+Event Listeners:
+For certain asynchronous operations, like listening for user interactions or events, you can use event listeners to handle the async code.
+Example:
+
+
+
+document.getElementById('myButton').addEventListener('click', () => {
+  // Code to be executed asynchronously when the button is clicked
+  console.log('Button clicked!');
+});
+Each of these methods has its own benefits and use cases. Promises and Async/Await have become more popular due to their improved readability and ease of error handling. When working with third-party libraries or older code, you might still encounter callbacks. It's essential to choose the appropriate method based on the specific requirements and the environment you are working in.

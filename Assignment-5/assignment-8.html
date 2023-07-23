@@ -1,0 +1,47 @@
+Q.8 Explain Purpose of Try and Catch Block & Why do we need it?
+
+answer:-
+
+
+The try and catch blocks are used in JavaScript for error handling. They help to handle exceptions or errors that may occur during the execution of code and allow developers to gracefully handle these errors without crashing the entire program. The primary purpose of using try and catch blocks is to provide a controlled way of dealing with exceptional situations and to keep the program running smoothly even when errors occur.
+
+Here's how try and catch blocks work together:
+
+try block:
+The try block contains the code that may potentially throw an exception. It is the block of code where the developer expects something could go wrong. If an error occurs within the try block, it will immediately stop executing further code within the block, and the program flow will jump to the corresponding catch block (if one exists).
+
+catch block:
+The catch block is used to handle the exception thrown within the try block. It provides an opportunity to gracefully respond to the error, log relevant information, or take corrective actions. The error object, which contains details about the error, is passed as a parameter to the catch block.
+
+Example without try-catch:
+
+
+
+function divide(a, b) {
+  return a / b;
+}
+
+const result = divide(10, 0);
+console.log(result); // This will throw an error: "Uncaught Error: Division by zero."
+In this example, the division by zero throws an error, and since there is no error handling mechanism, the program crashes with an uncaught error.
+
+Example with try-catch:
+
+
+
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division by zero is not allowed.");
+  }
+  return a / b;
+}
+
+try {
+  const result = divide(10, 0);
+  console.log(result); // This will not be executed.
+} catch (error) {
+  console.error(error.message); // Output: "Division by zero is not allowed."
+}
+In this example, the try block contains the division code, and since b is zero, an exception is thrown. The program flow then jumps to the catch block, where the error message is logged to the console, and the program continues running without crashing.
+
+In summary, the purpose of try and catch blocks is to provide a controlled way to handle exceptions and errors, allowing developers to respond to issues gracefully and prevent the entire program from crashing. By using try and catch, developers can identify and address errors effectively, improving the stability and reliability of their applications.

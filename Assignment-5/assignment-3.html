@@ -1,0 +1,66 @@
+Q.3 Explain SetTimeOut and setInterval ?
+
+answer:-
+
+
+setTimeout and setInterval are two functions commonly used in JavaScript to schedule the execution of code at specific time intervals. They are part of the Web APIs provided by browsers and Node.js for asynchronous programming. Here's an explanation of each:
+
+setTimeout:
+The setTimeout function is used to schedule the execution of a function or a code block after a specified delay. It takes two arguments: the first argument is the function to be executed, and the second argument is the delay in milliseconds before the function is called. The function will be executed only once after the specified delay.
+Syntax:
+
+
+
+const timeoutID = setTimeout(callback, delay);
+Example:
+
+
+
+function sayHello() {
+  console.log("Hello, this is a delayed message!");
+}
+
+// Call sayHello() function after 2000 milliseconds (2 seconds)
+const delayInMilliseconds = 2000;
+setTimeout(sayHello, delayInMilliseconds);
+In this example, the sayHello function will be executed once, with a 2-second delay.
+
+setInterval:
+The setInterval function is used to schedule the repeated execution of a function or a code block at a specified time interval. It also takes two arguments: the first argument is the function to be executed, and the second argument is the time interval in milliseconds. The function will be called repeatedly at the specified interval until clearInterval is called to stop it.
+Syntax:
+
+
+
+const intervalID = setInterval(callback, interval);
+Example:
+
+
+
+function logTime() {
+  console.log(new Date().toLocaleTimeString());
+}
+
+// Call logTime() function every 1000 milliseconds (1 second)
+const intervalInMilliseconds = 1000;
+const intervalID = setInterval(logTime, intervalInMilliseconds);
+In this example, the logTime function will be called every 1 second, logging the current time to the console until the clearInterval(intervalID) function is called.
+
+It's important to use clearTimeout with setTimeout and clearInterval with setInterval if you want to cancel the scheduled execution before it happens. This is done by passing the respective timer ID returned by setTimeout or setInterval to the corresponding clear function.
+
+Example of clearTimeout:
+
+
+
+const timeoutID = setTimeout(someFunction, delay);
+
+// If you want to cancel the scheduled execution
+clearTimeout(timeoutID);
+Example of clearInterval:
+
+
+
+const intervalID = setInterval(someFunction, interval);
+
+// If you want to stop the repeated execution
+clearInterval(intervalID);
+Both setTimeout and setInterval are widely used for implementing animations, updating data in real-time, polling data from servers, and various other tasks that require timing and scheduling in JavaScript applications.

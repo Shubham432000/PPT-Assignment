@@ -1,0 +1,46 @@
+Q.7 What’s async & await Keyword in JavaScript
+
+answer:-
+
+async and await are keywords introduced in ECMAScript 2017 (ES8) to simplify working with asynchronous code, particularly with Promises. They provide a more synchronous-looking syntax for handling asynchronous operations, making the code easier to read and understand.
+
+async:
+The async keyword is used to define an asynchronous function. When a function is declared with async, it automatically returns a Promise. The value returned from an async function will be wrapped in a resolved Promise if a non-Promise value is returned, and it will be rejected if an exception is thrown within the function.
+Example:
+
+
+async function fetchData() {
+  return 'Some data'; // Equivalent to: return Promise.resolve('Some data');
+}
+
+fetchData().then(data => {
+  console.log(data); // Output: 'Some data'
+});
+await:
+The await keyword can only be used inside an async function. It is used to pause the execution of the function until the Promise returned by the asynchronous operation is resolved or rejected. It effectively waits for the Promise to settle and then returns the result or throws an error if the Promise is rejected.
+Example:
+
+
+function fetchDataFromServer() {
+  return new Promise((resolve, reject) => {
+    // Simulating an API call delay using setTimeout
+    setTimeout(() => {
+      const data = { id: 1, name: 'John Doe' };
+      resolve(data);
+    }, 1000);
+  });
+}
+
+async function getData() {
+  try {
+    const data = await fetchDataFromServer();
+    console.log('Received data:', data);
+  } catch (error) {
+    console.error('Error:', error.message);
+  }
+}
+
+getData();
+In this example, the getData() function is marked as async, and the await keyword is used inside it to wait for the fetchDataFromServer() Promise to resolve. The await expression allows the code to proceed only when the data is available, making the asynchronous code look more like synchronous code, improving its readability and maintainability.
+
+Using async/await is an elegant alternative to chaining .then() and .catch() with Promises or dealing with nested callbacks. It allows developers to write more sequential and linear-looking code while still preserving the benefits of asynchronous behavior.
