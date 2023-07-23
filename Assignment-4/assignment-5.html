@@ -1,0 +1,39 @@
+Q.5 What is the difference between let and const ?
+
+answer:- 
+
+
+The main difference between let and const in JavaScript is how they handle variable reassignment and variable immutability:
+
+Reassignment:
+
+let: Variables declared with let can be reassigned a new value after their initial declaration. In other words, the variable's value can be changed.
+const: Variables declared with const cannot be reassigned a new value after their initial declaration. The variable's value remains constant (immutable) throughout its lifetime.
+Initialization:
+
+let: Variables declared with let can be declared without an initial value. They will be automatically initialized with undefined.
+const: Variables declared with const must be initialized with a value at the time of declaration. Once a value is assigned to a const variable, it cannot be changed.
+Scope:
+
+Both let and const have block-level scope, meaning they are only accessible within the block (a pair of curly braces {}) they are declared in.
+Hoisting:
+
+Both let and const are hoisted to the top of their block scope during the compilation phase. However, they are not initialized until their actual declaration is reached during the code execution. Accessing a let or const variable before its declaration results in the Temporal Dead Zone (TDZ) and throws a ReferenceError.
+Global Object Property:
+
+Variables declared with let in the global scope (outside any function or block) do not become properties of the global object (window in browsers).
+Variables declared with const in the global scope also do not become properties of the global object.
+Here are some examples to illustrate the differences:
+
+Using let:
+
+let x = 10;
+x = 20; // Valid, x can be reassigned
+let y; // Valid, y is declared with undefined value
+
+
+Using const:
+
+const a = 5;
+a = 10; // Invalid, reassignment of const variable throws an error
+const b; // Invalid, const variables must be initialized with a value

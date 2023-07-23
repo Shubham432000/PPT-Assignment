@@ -1,0 +1,67 @@
+Q.1 Explain Hoisting in JavaScript
+
+Answer:-
+Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. This means that you can use variables and functions before they are actually declared in the code.
+
+Hoisting occurs for both var and function declarations but not for let, const, or function expressions.
+
+Here are the key points to understand about hoisting:
+
+Hoisting for Variable Declarations (var):
+When you declare a variable using the var keyword, the declaration is hoisted to the top of its scope. However, the assignment (initialization) of the variable remains at its original position in the code. This can sometimes lead to unexpected behavior, as the variable may be used before it's assigned a value.
+
+Example:
+
+javascript
+Copy code
+console.log(x); // Output: undefined
+var x = 5;
+The above code snippet is equivalent to:
+
+javascript
+Copy code
+var x;
+console.log(x); // Output: undefined
+x = 5;
+Hoisting for Function Declarations:
+Function declarations are also hoisted to the top of their containing scope. This means you can call a function before its actual declaration in the code.
+
+Example:
+
+javascript
+Copy code
+foo(); // Output: "Hello!"
+
+function foo() {
+  console.log("Hello!");
+}
+The above code snippet is equivalent to:
+
+javascript
+Copy code
+function foo() {
+  console.log("Hello!");
+}
+
+foo(); // Output: "Hello!"
+Hoisting for Function Expressions:
+Function expressions, on the other hand, do not hoist the entire function definition. Only the variable declaration is hoisted, and the actual assignment of the function expression remains in its original position.
+
+Example:
+
+javascript
+Copy code
+// This will throw an error: foo is not a function
+foo();
+var foo = function() {
+  console.log("Hello!");
+};
+Hoisting with let and const:
+Unlike var, variables declared with let and const are hoisted but not initialized. This means that they are not accessible before the actual declaration in the code. Trying to access a variable declared with let or const before its declaration results in a ReferenceError.
+
+Example:
+
+javascript
+Copy code
+console.log(x); // Throws ReferenceError: Cannot access 'x' before initialization
+let x = 5;

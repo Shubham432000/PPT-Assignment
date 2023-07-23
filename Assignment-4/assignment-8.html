@@ -1,0 +1,70 @@
+Q.8 How can you destructure objects and arrays in ES6?
+
+answer:-
+
+In ECMAScript 6 (ES6), destructuring is a powerful feature that allows you to extract values from arrays or properties from objects and assign them to variables in a concise and convenient way. Destructuring is a shorthand syntax that simplifies the process of accessing and unpacking elements from arrays or objects.
+
+Destructuring Arrays:
+To destructure an array, you use square brackets [] on the left-hand side of the assignment, and on the right-hand side, you provide the array from which you want to extract values.
+
+Example:
+
+const numbers = [1, 2, 3];
+
+// Destructuring array
+const [a, b, c] = numbers;
+
+console.log(a); // Output: 1
+console.log(b); // Output: 2
+console.log(c); // Output: 3
+
+
+Destructuring Objects:
+To destructure an object, you use curly braces {} on the left-hand side of the assignment, and on the right-hand side, you provide the object from which you want to extract properties. The variable names on the left-hand side should match the property names in the object.
+
+Example:
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+  };
+  
+  // Destructuring object
+  const { firstName, lastName, age } = person;
+  
+  console.log(firstName); // Output: John
+  console.log(lastName); // Output: Doe
+  console.log(age); // Output: 30
+
+  
+  Renaming Variables:
+You can also use the destructuring syntax to rename variables during assignment. To do this, you specify the new variable name followed by a colon : before the property or array element you want to extract.
+
+Example
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+  };
+  
+  // Destructuring object with renaming
+  const { firstName: fName, lastName: lName, age: personAge } = person;
+  
+  console.log(fName); // Output: John
+  console.log(lName); // Output: Doe
+  console.log(personAge); // Output: 30
+
+  Default Values:
+You can also provide default values in case the property or array element being destructured is undefined.
+
+Example:
+const numbers = [1, 2];
+
+// Destructuring array with default value
+const [a, b, c = 3] = numbers;
+
+console.log(a); // Output: 1
+console.log(b); // Output: 2
+console.log(c); // Output: 3 (default value)

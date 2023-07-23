@@ -1,0 +1,23 @@
+Q.3 Difference between var & let?
+
+answer:-
+
+In JavaScript, both var and let are used for variable declaration, but they have some key differences in terms of scope and behavior:
+
+Scope:
+
+var: Variables declared with var are function-scoped. They are only accessible within the function they are declared in or globally if declared outside any function. They are not block-scoped, which means they are visible throughout the entire function, regardless of where they are declared within the function.
+let: Variables declared with let are block-scoped. They are only accessible within the block (a pair of curly braces {}) they are declared in. If declared within a function, they are limited to that function's block scope.
+Hoisting:
+
+var: Variables declared with var are hoisted to the top of their scope during the compilation phase. This means that the variable declarations are processed before the code is executed, allowing you to access a variable before it is declared (although it will be undefined until its actual declaration is reached in the code).
+let: Variables declared with let are also hoisted to the top of their block scope, but they are not initialized until their actual declaration is reached during the code execution. Accessing a let variable before its declaration results in the Temporal Dead Zone (TDZ) and throws a ReferenceError.
+Re-declaration:
+
+var: Variables declared with var can be re-declared in the same scope without any errors.
+let: Variables declared with let cannot be re-declared in the same scope. Attempting to do so will result in a SyntaxError.
+Global Object Property:
+
+var: When var is used to declare a variable in the global scope (outside any function or block), it becomes a property of the global object (e.g., window in browsers).
+let: Variables declared with let in the global scope do not become properties of the global object. They remain in the global scope but are not added as properties of the global object.
+Because of these differences, it is generally recommended to use let instead of var in modern JavaScript code, as let provides better block-scoping and avoids common pitfalls associated with hoisting and re-declaration.

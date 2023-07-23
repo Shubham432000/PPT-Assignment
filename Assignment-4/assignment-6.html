@@ -1,0 +1,77 @@
+
+Q.6  What is template literals in ES6 and how do you use them?
+
+answer:-
+
+Template literals, also known as template strings, are a new feature introduced in ECMAScript 6 (ES6) that allows developers to create more expressive and flexible strings in JavaScript. Template literals are enclosed in backticks (``) instead of single or double quotes.
+
+Template literals provide the following advantages over traditional strings:
+
+String Interpolation: Template literals allow easy embedding of variables and expressions within the string using ${}. This is called string interpolation and makes it simpler to include dynamic values in the string.
+
+Multi-line Strings: Template literals can span multiple lines without the need for escape characters or concatenation, making multiline strings more readable.
+
+Expression Evaluation: The expressions inside ${} are evaluated, and their results are included in the string. This allows for more complex string construction and dynamic content.
+
+Here's an example of using template literals:
+
+const name = 'John';
+const age = 30;
+
+// Traditional string concatenation
+const message1 = 'Hello, my name is ' + name + ' and I am ' + age + ' years old.';
+console.log(message1);
+
+// Using template literals
+const message2 = `Hello, my name is ${name} and I am ${age} years old.`;
+console.log(message2);
+
+
+Output:
+
+Hello, my name is John and I am 30 years old.
+Hello, my name is John and I am 30 years old.
+
+
+As you can see, both message1 and message2 produce the same output. However, using template literals with string interpolation (${}) is more concise and easier to read, especially when working with multiple variables or expressions in the string.
+
+Additionally, template literals can be used for multiline strings:
+
+const multilineMessage = `
+  This is a multiline string
+  that spans across multiple lines.
+  It is much easier to create
+  and read multiline strings using
+  template literals in ES6.
+`;
+
+console.log(multilineMessage);
+
+
+const multilineMessage = `
+  This is a multiline string
+  that spans across multiple lines.
+  It is much easier to create
+  and read multiline strings using
+  template literals in ES6.
+`;
+
+console.log(multilineMessage);
+
+
+const multilineMessage = `
+  This is a multiline string
+  that spans across multiple lines.
+  It is much easier to create
+  and read multiline strings using
+  template literals in ES6.
+`;
+
+console.log(multilineMessage);
+
+
+This is a multiline string
+that spans across multiple lines.
+It is much easier to create
+and read multiline strings using
+template literals in ES6.

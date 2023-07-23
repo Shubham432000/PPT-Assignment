@@ -1,0 +1,50 @@
+Q.7 What’s difference between map & forEach?
+
+answer:-
+
+Both map and forEach are array methods in JavaScript used for iterating over arrays, but they have some key differences in terms of their purpose and return values:
+
+Purpose:
+
+forEach: The forEach method is used to iterate over each element of an array and perform a specific operation for each element. It does not create a new array; rather, it executes a provided function once for each element in the array.
+map: The map method, on the other hand, is used to iterate over each element of an array, apply a transformation or modification to each element, and return a new array with the modified elements.
+Return Value:
+
+forEach: The forEach method returns undefined. It is primarily used for its side effects, such as logging values to the console or updating elements in the array.
+map: The map method returns a new array with the results of the applied transformation function. It does not modify the original array but instead creates a new array with the modified elements.
+Usage:
+
+forEach: Use forEach when you want to perform an operation on each element of the array without creating a new array. For example, logging each element, updating elements in the original array, or performing some other side effect for each element.
+map: Use map when you want to transform each element of the array and create a new array with the modified elements. For example, doubling the values of the array or extracting a specific property from each object in the array.
+Here's an example to illustrate the differences:
+
+Using forEach:
+
+const numbers = [1, 2, 3, 4];
+
+numbers.forEach((num, index) => {
+  console.log(`Element at index ${index}: ${num}`);
+});
+// Output:
+// Element at index 0: 1
+// Element at index 1: 2
+// Element at index 2: 3
+// Element at index 3: 4
+
+
+Using map:
+
+
+const numbers = [1, 2, 3, 4];
+
+const doubledNumbers = numbers.map((num) => num * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6, 8]
+
+In this example, forEach is used to log each element of the array, while map is used to create a new array with each element doubled.
+
+In summary, use forEach for iterating over an array without creating a new array, and use map when you need to transform each element and create a new array with the modified elements.
+
+
+
+
+
