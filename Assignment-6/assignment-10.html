@@ -1,0 +1,47 @@
+Q.10 What’s Super Keyword & What it does?
+
+answer:-
+
+In JavaScript, the super keyword is used to call the constructor or methods of a parent (or superclass) within a subclass. It allows subclasses to access and invoke the members (properties and methods) of their superclass. The super keyword is particularly useful in the context of class inheritance, where one class (subclass) extends another class (superclass) to inherit its behavior.
+
+The super keyword can be used in two main contexts:
+
+In the Constructor: When used in a subclass's constructor, super is used to call the constructor of the superclass. This ensures that the properties and behavior defined in the superclass are properly initialized when creating an instance of the subclass.
+
+In Class Methods: When used in a method of the subclass, super can be used to call a method with the same name from the superclass. This allows the subclass to override the behavior of the method while still being able to use the implementation from the superclass.
+
+Example of using super in the constructor:
+
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Call the constructor of the superclass (Animal)
+    this.breed = breed;
+  }
+
+  speak() {
+    super.speak(); // Call the speak method of the superclass (Animal)
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog("Buddy", "Labrador");
+dog.speak();
+Output:
+
+
+Buddy makes a sound.
+Buddy barks.
+In this example, we have a superclass Animal with a constructor and a speak method. The subclass Dog extends Animal and calls the super keyword in its constructor to call the constructor of Animal, ensuring that the name property is initialized. The speak method in the Dog subclass uses super.speak() to call the speak method of the Animal superclass before adding additional behavior specific to the Dog class.
+
+It's important to note that the super keyword must be used before accessing this in the constructor. This is because the super call initializes the this object, and using this before super can lead to errors.

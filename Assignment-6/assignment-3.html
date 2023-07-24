@@ -1,0 +1,64 @@
+Q.3 What’s Call Apply Bind Method & Difference Between them
+
+answer:-
+
+In JavaScript, call, apply, and bind are three methods that are used to control the value of the this keyword when invoking functions. They allow us to explicitly set the context in which a function is executed.
+
+call() method:
+The call() method is a built-in function in JavaScript that allows you to call a function with a specified this value and arguments provided individually (separated by commas).
+
+Syntax:
+
+
+function.call(thisArg, arg1, arg2, ...)
+Example:
+
+
+Copy code
+function greet(message) {
+  console.log(`${message}, ${this.name}`);
+}
+
+const person = { name: "John" };
+greet.call(person, "Hello"); // Output: "Hello, John"
+apply() method:
+The apply() method is similar to the call() method, but it allows you to call a function with a specified this value and arguments provided as an array or an array-like object.
+
+Syntax:
+
+
+function.apply(thisArg, [argsArray])
+Example:
+
+
+function greet(message) {
+  console.log(`${message}, ${this.name}`);
+}
+
+const person = { name: "Alice" };
+const args = ["Hi"];
+greet.apply(person, args); // Output: "Hi, Alice"
+bind() method:
+The bind() method is another built-in function that creates a new function with a specified this value and any initial arguments provided. It does not immediately execute the function but instead returns a new function that can be invoked later.
+
+Syntax:
+
+
+function.bind(thisArg, arg1, arg2, ...)
+Example:
+
+function greet(message) {
+  console.log(`${message}, ${this.name}`);
+}
+
+const person = { name: "Kate" };
+const greetPerson = greet.bind(person, "Hola");
+greetPerson(); // Output: "Hola, Kate"
+Differences:
+
+call() and apply() are used to immediately invoke the function with the specified context (this value) and arguments.
+bind() is used to create a new function with the specified context (this value) and arguments, but it does not immediately invoke the function.
+call() takes the context (this value) and individual arguments, separated by commas.
+apply() takes the context (this value) and arguments as an array or an array-like object.
+bind() takes the context (this value) and any initial arguments, but it does not invoke the function.
+In summary, call() and apply() are used for immediate function invocation, while bind() is used to create a new function with a specified context and arguments, which can be called later.

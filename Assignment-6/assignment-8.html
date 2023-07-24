@@ -1,0 +1,51 @@
+Q.8 Whats Encapsulation and Purpose of it ?
+
+answer:-
+
+In JavaScript, encapsulation can be achieved using closures and object-oriented patterns. Encapsulation in JavaScript involves the concept of creating private variables and methods within an object and exposing only the necessary functionalities through public methods. The purpose of encapsulation in JavaScript is similar to that in other programming languages:
+
+Data Hiding: Encapsulation allows you to hide the internal state and implementation details of an object from the outside scope. By creating private variables and methods, you prevent direct access to the object's data, protecting it from unwanted modifications and ensuring data integrity.
+
+Data Protection: By providing controlled access to the object's properties and methods through public methods, encapsulation helps protect the object's data from unintended manipulation. The public methods act as interfaces to interact with the object's internal state, ensuring that data can be modified only in a controlled and valid way.
+
+Abstraction: Encapsulation enables abstraction in JavaScript by exposing only the relevant and essential functionalities of an object while hiding the implementation details. This abstraction simplifies the usage of objects and promotes a higher level of understanding without needing to know the underlying complexities.
+
+Code Organization: Encapsulation in JavaScript aids in code organization by grouping related properties and methods within an object. This practice improves code maintainability and readability, as related functionalities are contained within a single logical unit.
+
+Version Control: With encapsulation, you can make internal changes to an object's implementation without affecting the external code that interacts with the object. This allows for better version control and reduces the risk of breaking the code when making updates.
+
+Encapsulation in JavaScript is typically achieved using closure and private variables. Here's a simple example to illustrate encapsulation:
+
+
+function createPerson(name, age) {
+  // Private variables (encapsulated)
+  let _name = name;
+  let _age = age;
+
+  // Public methods (exposed)
+  return {
+    getName: function() {
+      return _name;
+    },
+    getAge: function() {
+      return _age;
+    },
+    setName: function(newName) {
+      _name = newName;
+    },
+    setAge: function(newAge) {
+      _age = newAge;
+    }
+  };
+}
+
+const person = createPerson("Alice", 30);
+console.log(person.getName()); // Output: "Alice"
+console.log(person.getAge()); // Output: 30
+
+person.setName("Bob");
+person.setAge(25);
+
+console.log(person.getName()); // Output: "Bob"
+console.log(person.getAge()); // Output: 25
+In this example, the createPerson function acts as a factory that creates a person object with private variables _name and _age. Public methods getName, getAge, setName, and setAge are returned from the function and provide controlled access to the private variables. This way, the internal state of the person object is encapsulated and can only be modified through the public methods.
