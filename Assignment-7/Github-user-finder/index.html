@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>GitHub User Finder</h1>
+      <div class="btn">
+      <input type="text" id="username" placeholder="Enter GitHub username" style="background-color: aliceblue;"/>
+      <button onclick="getUserData()" style="background-color: darkblue;color: white;">Get Data</button>
+    </div>
+      <div>
+        <img id="avatar" src="" alt="User Avatar" />
+        <div class="user-info">
+          <div>
+            <h2 id="name"></h2>
+            <p id="bio"></p>
+          </div>
+          <div>
+            <p id="followers"></p>
+            <p id="repos"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
